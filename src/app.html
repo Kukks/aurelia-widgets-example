@@ -1,0 +1,16 @@
+<template>
+  <h1>${message}</h1>
+
+
+  <iframe-widget configuration.bind="{address: 'http://test.com'}"></iframe-widget>
+
+  <widget-instance instance.bind="instance"></widget-instance>
+
+  ${set.length}
+  <widget-set instances.one-way="instances"></widget-set>
+
+
+  <hr/>
+
+  <widget-instance repeat.for="instance of instances" instance.bind="instance"></widget-instance>
+</template>

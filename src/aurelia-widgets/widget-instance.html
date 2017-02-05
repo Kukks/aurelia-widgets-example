@@ -1,0 +1,7 @@
+<template>
+  <compose if.bind="elementPath"
+           view-model="${elementPath}"
+           view="${elementPath + '.html'}"
+           model.bind="configuration"
+            containerless></compose>
+</template>
