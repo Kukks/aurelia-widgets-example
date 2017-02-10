@@ -39,9 +39,9 @@ export class WidgetManager {
     return null;
   }
 
-
   public getRegisteredWidget(name: string): IRegisteredWidget {
-    const filterResults = WidgetManager.registeredWidgets.filter((registeredWidget: IRegisteredWidget) => registeredWidget.name === name);
+    const filterResults =
+      WidgetManager.registeredWidgets.filter((registeredWidget: IRegisteredWidget) => registeredWidget.name === name);
     if (filterResults && filterResults.length > 0) {
       return filterResults[0];
     }

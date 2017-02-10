@@ -16,13 +16,15 @@ export class WidgetInstance {
   public instanceChanged(newValue: IWidgetInstance, oldValue: IWidgetInstance) {
     if (!oldValue || (newValue && newValue.widgetName !== oldValue.widgetName)) {
       this.handleViewModel(newValue);
-    }else if(oldValue && newValue.widgetName === oldValue.widgetName && newValue.configuration != oldValue.configuration){
+    } else if (oldValue &&
+      newValue.widgetName === oldValue.widgetName &&
+      newValue.configuration !== oldValue.configuration) {
       this.getConfiguration(newValue);
     }
   }
 
   public bind(bindingContext: WidgetInstance, overrideContext?: Object) {
-    if(bindingContext.instance) {
+    if (bindingContext.instance) {
       this.handleViewModel(bindingContext.instance);
     }
   }
@@ -32,7 +34,7 @@ export class WidgetInstance {
     this.elementPath = this.widgetManager.getRegisteredWidget(wi.widgetName).element;
   }
 
-  private getConfiguration(wi: IWidgetInstance){
+  private getConfiguration(wi: IWidgetInstance) {
     this.configuration = this.widgetManager.getWidgetConfiguration(wi.widgetName, wi.configuration);
   }
 }

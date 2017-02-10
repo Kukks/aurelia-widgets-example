@@ -9,8 +9,5 @@ export * from "./widget.manager";
 export * from "./widget.models";
 
 export function configure(config: FrameworkConfiguration) {
-  config.globalResources(["./widget-instance","./widget-position-sort.value-converter", "./widget-set"]);
+  config.globalResources(["./widget-instance", "./widget-position-sort.value-converter", "./widget-set"]);
 }
-
-
-
